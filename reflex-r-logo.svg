@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="darkGloss" x1="96" y1="84" x2="448" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E2D51" />
+      <stop offset="0.42" stop-color="#0D1736" />
+      <stop offset="1" stop-color="#020A20" />
+    </linearGradient>
+    <linearGradient id="blueGloss" x1="68" y1="222" x2="220" y2="365" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1A99FF" />
+      <stop offset="1" stop-color="#007BFF" />
+    </linearGradient>
+  </defs>
+
+  <path d="M52 106H305.5C367.6 106 418.5 155.5 420.9 217.6C423.1 275 376.7 322 319.2 322H224.8L282 267H314.5C339.6 267 360 246.7 360 221.5C360 196.3 339.6 176 314.5 176H123L52 106Z" fill="url(#darkGloss)" />
+
+  <path d="M196 322H275L430 406H347L196 322Z" fill="url(#darkGloss)" />
+
+  <path d="M52 225H130L246 331H168L52 225Z" fill="url(#blueGloss)" />
+</svg>
