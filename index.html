@@ -1,419 +1,1115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reflex Digital | Strategic Vision. Rapid Execution.</title>
-    <meta
-      name="description"
-      content="Reflex Digital is a BC digital agency delivering Kamloops web design, high-performance development, and technical SEO for fast-moving businesses."
-    />
-    <meta
-      name="keywords"
-      content="Kamloops Web Design, BC Digital Agency, Technical SEO, Local SEO, React Development, Tailwind CSS"
-    />
-    <link rel="canonical" href="https://reflexdigital.ca/" />
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-    <meta property="og:title" content="Reflex Digital | Kamloops Web Design & Technical SEO" />
-    <meta
-      property="og:description"
-      content="Reflex Digital is a BC digital agency helping brands launch high-performance websites and dominate local search in Kamloops and beyond."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://reflexdigital.ca/" />
-    <meta property="og:image" content="https://reflexdigital.ca/Reflex_Logo_R.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Reflex Digital | Kamloops Web Design & Technical SEO" />
-    <meta
-      name="twitter:description"
-      content="Strategic digital solutions with rapid execution for growth-focused businesses in Kamloops and across BC."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              paper: '#F5F8FF',
-              ink: '#14223B',
-              electric: '#007BFF',
-              line: '#CFE0FF',
-            },
-            boxShadow: {
-              glow: '0 0 20px rgba(0, 123, 255, 0.25)',
-              card: '0 14px 35px rgba(20, 34, 59, 0.09)',
-            },
-            fontFamily: {
-              montserrat: ['Montserrat', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      body {
-        font-family: 'Montserrat', sans-serif;
-      }
-
-      .headline-spacing {
-        letter-spacing: -1px;
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 800ms ease, transform 800ms ease;
-      }
-
-      .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .diagonal-motif {
-        position: absolute;
-        width: min(72vw, 980px);
-        height: 2px;
-        background: linear-gradient(90deg, rgba(0, 123, 255, 0), rgba(0, 123, 255, 0.6), rgba(0, 123, 255, 0));
-        transform: rotate(-12deg);
-        opacity: 0.4;
-      }
-
-      .section-frame {
-        position: relative;
-      }
-
-      .section-frame::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border: 1px solid rgba(207, 224, 255, 0.75);
-        pointer-events: none;
-      }
-
-      .masked-reveal {
-        overflow: hidden;
-      }
-
-      .masked-reveal > span {
-        display: block;
-        transform: translateY(100%);
-        opacity: 0;
-        transition: transform 850ms ease, opacity 850ms ease;
-      }
-
-      .is-visible .masked-reveal > span {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      .parallax {
-        will-change: transform;
-      }
-    </style>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "LocalBusiness",
-            "name": "Reflex Digital",
-            "image": "https://reflexdigital.ca/Reflex_Logo_R.png",
-            "url": "https://reflexdigital.ca/",
-            "telephone": "+1-250-000-0000",
-            "areaServed": ["Kamloops", "Thompson-Nicola", "British Columbia"],
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Kamloops",
-              "addressRegion": "BC",
-              "addressCountry": "CA"
-            },
-            "description": "Kamloops web design and technical SEO agency focused on high-performance growth systems."
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How fast can Reflex Digital launch a project?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Most projects begin with discovery in week one, launch an execution sprint within 2-4 weeks, and continue with optimization."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you only work with Kamloops businesses?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We are based in Kamloops and serve the Thompson-Nicola region, while also supporting growth-focused organizations across BC and Canada."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can you handle both web development and SEO together?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. We combine high-performance web architecture with technical and local SEO so your site ranks better and converts more effectively."
-                }
-              }
-            ]
-          }
-        ]
-      }
-    </script>
-  </head>
-  <body class="bg-paper text-ink antialiased">
-    <div class="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-paper to-[#EBF2FF]">
-      <div class="diagonal-motif left-[-14%] top-[14%]"></div>
-      <div class="diagonal-motif right-[-20%] top-[38%]"></div>
-      <div class="diagonal-motif left-[6%] bottom-[20%]"></div>
-
-      <header class="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 md:px-10">
-        <a href="#" class="inline-flex items-center gap-3" aria-label="Reflex Digital home">
-          <img src="Reflex_Logo_R.png" alt="Reflex Digital logo" class="h-10 w-10 object-contain md:h-12 md:w-12" onerror="this.onerror=null;this.src='reflex-r-logo.svg';" />
-          <span class="text-sm font-semibold tracking-[0.14em] text-ink/90 sm:text-base">REFLEX DIGITAL</span>
-        </a>
-
-        <a
-          href="#inquiry"
-          class="rounded-full border border-ink/35 bg-white/75 px-5 py-2 text-xs font-semibold tracking-[0.06em] text-ink transition hover:border-electric hover:text-electric md:text-sm"
-          >Book a Consultation</a
-        >
-      </header>
-
-      <main class="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-20 px-5 pb-16 pt-4 md:px-10 md:pt-10 lg:gap-28">
-        <section class="reveal section-frame relative bg-white/85 px-5 py-10 sm:px-10 md:px-14">
-          <img
-            src="Reflex_Logo_R.png"
-            onerror="this.onerror=null;this.src='reflex-r-logo.svg';"
-            alt=""
-            aria-hidden="true"
-            class="parallax pointer-events-none absolute -right-10 top-[-24px] h-[260px] w-[260px] object-contain opacity-[0.08] sm:h-[340px] sm:w-[340px]"
-            data-speed="0.08"
-          />
-          <div class="grid items-end gap-10 lg:grid-cols-12">
-            <div class="lg:col-span-8">
-              <p class="mb-5 text-sm font-semibold tracking-[0.05em] text-electric">Strategic Digital Solutions and Responsive Execution</p>
-              <h1 class="headline-spacing masked-reveal text-5xl font-extrabold leading-[0.9] text-ink sm:text-6xl md:text-7xl lg:text-8xl">
-                <span>STRATEGIC VISION.</span>
-              </h1>
-              <h1 class="headline-spacing masked-reveal mt-1 text-5xl font-extrabold leading-[0.9] text-ink sm:text-6xl md:text-7xl lg:text-8xl">
-                <span>RAPID EXECUTION.</span>
-              </h1>
-            </div>
-            <div class="space-y-6 lg:col-span-4 lg:pb-2">
-              <p class="text-base leading-8 text-ink/80 md:text-lg">
-                High-performance web development and SEO for businesses that move fast.
-              </p>
-              <a
-                href="#service-hub"
-                class="inline-flex items-center rounded-full bg-electric px-8 py-3 text-sm font-semibold tracking-[0.04em] text-white transition hover:shadow-glow"
-              >
-                View Services
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section id="service-hub" class="reveal space-y-8">
-          <div class="grid gap-8 lg:grid-cols-12">
-            <div class="lg:col-span-5">
-              <p class="text-sm font-semibold tracking-[0.05em] text-electric">Deep-Dive Service Hub</p>
-              <h2 class="headline-spacing mt-3 text-3xl font-extrabold text-ink sm:text-5xl">Execution Built for Speed & Clarity</h2>
-            </div>
-            <article class="section-frame bg-white/88 px-6 py-7 lg:col-span-7">
-              <p class="text-xs font-semibold tracking-[0.08em] text-electric">SERVICE I</p>
-              <h3 class="mt-2 text-2xl font-bold text-ink">High-Velocity Web Dev</h3>
-              <p class="mt-4 text-base leading-8 text-ink/78">
-                We engineer sub-second experiences with modern React + Tailwind architecture, giving your users instant feedback and frictionless journeys.
-              </p>
-            </article>
-          </div>
-
-          <div class="grid gap-6 lg:grid-cols-12">
-            <article class="section-frame bg-white/82 px-6 py-7 lg:col-span-6 lg:translate-y-8">
-              <p class="text-xs font-semibold tracking-[0.08em] text-electric">SERVICE II</p>
-              <h3 class="mt-2 text-2xl font-bold text-ink">Local Dominance SEO</h3>
-              <p class="mt-4 text-base leading-8 text-ink/78">
-                Win the Kamloops Map Pack while building authority for AI-Search discovery, so your business is found first by high-intent local customers.
-              </p>
-            </article>
-            <article class="section-frame bg-white/95 px-6 py-7 lg:col-span-6">
-              <p class="text-xs font-semibold tracking-[0.08em] text-electric">SERVICE III</p>
-              <h3 class="mt-2 text-2xl font-bold text-ink">Digital Growth Consulting</h3>
-              <p class="mt-4 text-base leading-8 text-ink/78">
-                Through conversion rate optimization and scaling roadmaps, we turn technical opportunities into measurable revenue growth.
-              </p>
-            </article>
-          </div>
-
-          <div class="section-frame bg-white/88 px-6 py-7">
-            <div class="flex flex-wrap items-center justify-between gap-3">
-              <p class="text-sm font-semibold tracking-[0.05em] text-electric">Execution Roadmap</p>
-              <p class="text-xs font-semibold tracking-[0.1em] text-ink/60">DISCOVERY → RAPID EXECUTION → OPTIMIZATION</p>
-            </div>
-            <div class="mt-6 grid gap-6 md:grid-cols-3">
-              <div>
-                <p class="text-xs font-semibold tracking-[0.08em] text-electric">STAGE 01</p>
-                <h3 class="mt-2 text-lg font-bold text-ink">Discovery</h3>
-              </div>
-              <div>
-                <p class="text-xs font-semibold tracking-[0.08em] text-electric">STAGE 02</p>
-                <h3 class="mt-2 text-lg font-bold text-ink">Rapid Execution</h3>
-              </div>
-              <div>
-                <p class="text-xs font-semibold tracking-[0.08em] text-electric">STAGE 03</p>
-                <h3 class="mt-2 text-lg font-bold text-ink">Optimization</h3>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="advantages" class="reveal space-y-8">
-          <div class="max-w-3xl space-y-2">
-            <p class="text-sm font-semibold tracking-[0.05em] text-electric">Why Growth Teams Choose Reflex</p>
-            <h2 class="headline-spacing text-3xl font-extrabold text-ink sm:text-4xl">Built for ROI, Not Just Aesthetics</h2>
-          </div>
-          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article class="section-frame bg-white/85 px-6 py-6">
-              <h3 class="text-lg font-bold text-ink">Performance-First Builds</h3>
-              <p class="mt-3 text-base leading-7 text-ink/78">Every build is structured for Core Web Vitals, clean code ownership, and conversion-focused page speed.</p>
-            </article>
-            <article class="section-frame bg-white/85 px-6 py-6 md:translate-y-8">
-              <h3 class="text-lg font-bold text-ink">Search Visibility Systems</h3>
-              <p class="mt-3 text-base leading-7 text-ink/78">From technical audits to local ranking strategy, we align search traffic with commercial intent.</p>
-            </article>
-            <article class="section-frame bg-white/85 px-6 py-6">
-              <h3 class="text-lg font-bold text-ink">Transparent Partnership</h3>
-              <p class="mt-3 text-base leading-7 text-ink/78">Clear roadmaps, concise reporting, and strategic support so decisions stay fast and accountable.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="works" class="reveal space-y-8">
-          <div class="space-y-2">
-            <p class="text-sm font-semibold tracking-[0.05em] text-electric">Selected Works</p>
-            <h2 class="headline-spacing text-3xl font-extrabold text-ink sm:text-4xl">Proof in Performance</h2>
-          </div>
-
-          <div class="grid gap-6 md:grid-cols-8 md:grid-rows-2">
-            <article class="section-frame bg-white/92 p-8 transition duration-300 hover:-translate-y-1 hover:border-electric md:col-span-5 md:row-span-2">
-              <p class="text-xs font-semibold uppercase tracking-[0.08em] text-electric">Project A</p>
-              <h3 class="mt-2 max-w-xl text-3xl font-bold text-ink">Local E-commerce Scale</h3>
-              <p class="mt-4 max-w-2xl text-base leading-8 text-ink/78">
-                Delivered a full technical rebuild and local SEO strategy that generated a 140% organic reach increase for a growing BC retailer.
-              </p>
-              <a href="#" class="mt-8 inline-flex items-center rounded-full bg-electric px-7 py-3 text-sm font-semibold text-white transition hover:shadow-glow">View Project</a>
-            </article>
-
-            <article class="section-frame bg-white p-8 transition duration-300 hover:-translate-y-1 hover:border-electric md:col-span-3 md:row-span-2 md:translate-y-10">
-              <p class="text-xs font-semibold uppercase tracking-[0.08em] text-electric">Project B</p>
-              <h3 class="mt-2 text-2xl font-bold text-ink">Professional Services UI</h3>
-              <p class="mt-4 text-base leading-8 text-ink/78">
-                Designed and launched a high-conversion client portal experience for a Canadian legal firm to simplify intake and increase lead quality.
-              </p>
-              <a href="#" class="mt-8 inline-flex items-center rounded-full bg-electric px-7 py-3 text-sm font-semibold text-white transition hover:shadow-glow">View Project</a>
-            </article>
-          </div>
-        </section>
-
-        <section id="faq" class="reveal space-y-8">
-          <div class="space-y-2">
-            <p class="text-sm font-semibold tracking-[0.05em] text-electric">FAQ</p>
-            <h2 class="headline-spacing text-3xl font-extrabold text-ink sm:text-4xl">Common Questions, Clear Answers</h2>
-          </div>
-
-          <div class="grid gap-4">
-            <article class="section-frame bg-white px-6 py-6">
-              <h3 class="text-lg font-bold text-ink">How fast can Reflex Digital launch a project?</h3>
-              <p class="mt-3 text-base leading-7 text-ink/78">Most engagements begin with discovery in week one, followed by a rapid execution sprint in 2–4 weeks, then ongoing optimization.</p>
-            </article>
-            <article class="section-frame bg-white px-6 py-6">
-              <h3 class="text-lg font-bold text-ink">Do you only work with Kamloops businesses?</h3>
-              <p class="mt-3 text-base leading-7 text-ink/78">We’re proudly based in Kamloops and serve Thompson-Nicola first, while also partnering with growing organizations across BC and Canada.</p>
-            </article>
-            <article class="section-frame bg-white px-6 py-6">
-              <h3 class="text-lg font-bold text-ink">Can one team handle dev + SEO together?</h3>
-              <p class="mt-3 text-base leading-7 text-ink/78">Yes. Our process combines technical web development with technical/local SEO so speed, visibility, and conversion are aligned from day one.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="inquiry" class="reveal section-frame bg-white px-6 py-10 sm:px-10 md:px-14">
-          <div class="mx-auto max-w-3xl space-y-8">
-            <div class="space-y-2 text-center">
-              <p class="text-sm font-semibold tracking-[0.05em] text-electric">Strategic Inquiry</p>
-              <h2 class="headline-spacing text-3xl font-extrabold text-ink sm:text-4xl">Let’s Build Your Next Growth Engine</h2>
-            </div>
-
-            <form class="grid gap-5">
-              <label class="grid gap-2 text-sm font-semibold text-ink" for="name">
-                Name
-                <input id="name" name="name" type="text" class="rounded-none border border-line bg-paper px-4 py-3 text-base font-normal text-ink outline-none transition focus:border-electric" placeholder="Your full name" />
-              </label>
-
-              <label class="grid gap-2 text-sm font-semibold text-ink" for="website">
-                Company Website
-                <input id="website" name="website" type="url" class="rounded-none border border-line bg-paper px-4 py-3 text-base font-normal text-ink outline-none transition focus:border-electric" placeholder="https://" />
-              </label>
-
-              <label class="grid gap-2 text-sm font-semibold text-ink" for="goal">
-                Primary Goal
-                <select id="goal" name="goal" class="rounded-none border border-line bg-paper px-4 py-3 text-base font-normal text-ink outline-none transition focus:border-electric">
-                  <option>Launch a New Site</option>
-                  <option>Rank Higher Locally</option>
-                  <option>Scale My Strategy</option>
-                </select>
-              </label>
-
-              <button type="submit" class="mt-3 w-full bg-electric px-6 py-4 text-base font-bold tracking-[0.04em] text-white transition hover:shadow-glow">
-                Initialize Project
-              </button>
-            </form>
-          </div>
-        </section>
-      </main>
-
-      <footer class="relative z-10 mx-auto mt-8 w-full max-w-7xl border-t border-line px-5 py-8 text-center text-sm text-ink/70 md:px-10">
-        <p>Reflex Digital | Based in Kamloops, BC | Serving the Thompson-Nicola Region &amp; Beyond.</p>
-        <p class="mt-2">© 2026 Reflex Digital. All rights reserved.</p>
-      </footer>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reflex Digital | Strategic Vision. Rapid Execution.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+ 
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+  :root {
+    --black: #080808;
+    --surface: #111111;
+    --surface2: #181818;
+    --border: #222222;
+    --lime: #0098FF;
+    --lime-dim: #0077cc;
+    --white: #F2F2F2;
+    --muted: #666666;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+ 
+  html { scroll-behavior: smooth; }
+ 
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+ 
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+ 
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+ 
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 500;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(8,8,8,0.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    transition: background 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(8,8,8,0.99);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.7rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.06em;
+    color: var(--white);
+  }
+  .nav-logo img {
+    width: 40px; height: 40px;
+    object-fit: contain;
+  }
+  .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--lime) !important;
+    color: #ffffff !important;
+    padding: 0.5rem 1.25rem !important;
+    font-weight: 500 !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.1em;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: #0080ee !important; transform: translateY(-1px); }
+ 
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 5rem 3rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,152,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,152,255,0.06) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+  .hero-grid-lines::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 15% 80%, rgba(0,152,255,0.07) 0%, transparent 70%);
+  }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.3s ease forwards;
+  }
+  .hero-eyebrow span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--lime);
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 40px; height: 1px;
+    background: var(--lime);
+  }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.5s ease forwards;
+  }
+  .hero-headline .accent { color: var(--lime); }
+  .hero-sub-row {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-top: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s ease forwards;
+  }
+  .hero-descriptor {
+    max-width: 380px;
+    font-size: 1rem;
+    color: rgba(242,242,242,0.6);
+    line-height: 1.65;
+  }
+  .hero-stat-group {
+    display: flex; gap: 3rem;
+    align-items: flex-end;
+  }
+  .hero-stat { text-align: right; }
+  .hero-stat .number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--lime);
+    letter-spacing: 0.02em;
+  }
+  .hero-stat .label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .hero-scroll-indicator {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-family: var(--font-mono); font-size: 0.6rem;
+    letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted);
+    animation: fadeUp 1s 1.2s ease forwards; opacity: 0;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(var(--lime), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+ 
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+ 
+  /* ── SECTIONS GENERAL ── */
+  section { padding: 6rem 3rem; }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lime);
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block; width: 30px; height: 1px;
+    background: var(--lime);
+  }
+  h2.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.5rem;
+  }
+ 
+  /* ── SERVICES ── */
+  #services { background: var(--surface); }
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+  .services-header-right {
+    max-width: 300px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: right;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .service-card {
+    background: var(--surface);
+    padding: 2.5rem;
+    display: flex; flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--lime);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover { background: var(--surface2); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-number {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+  .service-icon {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+    display: grid; place-items: center;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s;
+  }
+  .service-card:hover .service-icon { border-color: var(--lime); }
+  .service-icon svg { width: 22px; height: 22px; stroke: var(--lime); fill: none; stroke-width: 1.5; }
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .service-desc {
+    font-size: 0.875rem;
+    color: rgba(242,242,242,0.55);
+    line-height: 1.7;
+    flex: 1;
+  }
+  .service-link {
+    display: flex; align-items: center; gap: 0.5rem;
+    margin-top: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--lime);
+    text-decoration: none;
+    transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 0.9rem; }
+  .service-link .arrow { font-size: 0.8rem; }
+ 
+  /* ── PROCESS ── */
+  #process { background: var(--black); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem; left: 16.66%; right: 16.66%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--lime), var(--lime), transparent);
+    opacity: 0.3;
+  }
+  .process-step {
+    padding: 0 2.5rem 0 0;
+    position: relative;
+  }
+  .step-number-wrap {
+    display: flex; align-items: center; gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .step-number {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+    display: grid; place-items: center;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--lime);
+    flex-shrink: 0;
+    background: var(--black);
+    position: relative;
+    z-index: 1;
+  }
+  .step-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .step-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+  }
+  .step-desc {
+    font-size: 0.875rem;
+    color: rgba(242,242,242,0.5);
+    line-height: 1.7;
+  }
+ 
+  /* ── WHY ── */
+  #why { background: var(--surface); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+    align-items: center;
+  }
+  .why-left {}
+  .why-left-text {
+    font-size: 1.125rem;
+    color: rgba(242,242,242,0.6);
+    line-height: 1.75;
+    margin-top: 1.5rem;
+    max-width: 480px;
+  }
+  .why-pillars {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--border);
+  }
+  .why-pillar {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .why-pillar:last-child { border-bottom: none; }
+  .why-pillar:hover { background: var(--surface2); }
+  .pillar-icon {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--lime);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+  .pillar-title {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+  .pillar-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+ 
+  /* ── WORK ── */
+  #work { background: var(--black); }
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    margin-top: 3rem;
+    border: 1px solid var(--border);
+  }
+  .work-card {
+    background: var(--surface);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    transition: background 0.3s;
+  }
+  .work-card:hover { background: var(--surface2); }
+  .work-card-bg {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.05;
+    font-family: var(--font-display);
+    font-size: 14rem;
+    line-height: 1;
+    color: var(--lime);
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+  .work-tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 0.75rem;
+  }
+  .work-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+  }
+  .work-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 340px;
+    margin-bottom: 1.5rem;
+  }
+  .work-metric {
+    display: inline-flex; align-items: baseline; gap: 0.4rem;
+  }
+  .work-metric .number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--lime);
+  }
+  .work-metric .unit {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+ 
+  /* ── FAQ ── */
+  #faq { background: var(--surface); }
+  .faq-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 6rem;
+    margin-top: 4rem;
+    align-items: start;
+  }
+  .faq-left-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-top: 1rem;
+  }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+  .faq-question {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s;
+    user-select: none;
+  }
+  .faq-question:hover { color: var(--lime); }
+  .faq-toggle {
+    width: 28px; height: 28px;
+    border: 1px solid var(--border);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    color: var(--lime);
+    transition: transform 0.3s, background 0.2s;
+    line-height: 1;
+  }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--lime); color: var(--black); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 1.5rem; }
+ 
+  /* ── CTA ── */
+  #contact {
+    background: var(--black);
+    padding: 8rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  #contact::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(198,255,0,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .contact-inner {
+    max-width: 700px;
+  }
+  .contact-headline {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.9;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.5rem;
+  }
+  .contact-headline .accent { color: var(--lime); }
+  .contact-sub {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 3rem;
+    max-width: 440px;
+    line-height: 1.7;
+  }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--white);
+    padding: 0.85rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    border-color: var(--lime);
+  }
+  .form-field select option { background: var(--surface); }
+  .form-field textarea { resize: none; height: 100px; }
+  .submit-btn {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: var(--lime);
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+  .submit-btn:hover { background: #0080ee; transform: translateX(4px); }
+  .submit-btn .arrow { font-size: 1.1rem; }
+ 
+  /* ── FOOTER ── */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .footer-logo img {
+    width: 32px; height: 32px;
+    object-fit: contain;
+  }
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .footer-location {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+ 
+  /* ── MOBILE ── */
+  /* ── FORM SUCCESS STATE ── */
+  .form-success {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem;
+    border: 1px solid var(--lime);
+    margin-top: 2rem;
+    max-width: 480px;
+  }
+  .form-success.show { display: flex; }
+  .success-icon {
+    font-size: 2rem;
+    color: var(--lime);
+    font-family: var(--font-display);
+  }
+  .success-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.06em;
+  }
+  .success-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .form-error {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: #ff4d4d;
+    margin-top: 0.5rem;
+    min-height: 1rem;
+  }
+ 
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    #hero { padding: 0 1.5rem 4rem; }
+    .hero-sub-row { flex-direction: column; align-items: flex-start; gap: 2rem; }
+    .hero-stat-group { gap: 2rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; gap: 3rem; }
+    .process-steps::before { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .work-grid { grid-template-columns: 1fr; }
+    .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .services-header-right { text-align: left; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="https://reflexdigital.ca/Reflex_Logo_R.png" alt="Reflex Digital">
+    REFLEX DIGITAL
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#work">Work</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Book a Call</a>
+  </div>
+</nav>
+ 
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-lines"></div>
+  <div class="hero-eyebrow">
+    <span>Kamloops, BC · Est. 2024</span>
+  </div>
+  <h1 class="hero-headline">
+    STRATEGIC<br>
+    VISION.<br>
+    <span class="accent">RAPID</span><br>
+    EXECUTION.
+  </h1>
+  <div class="hero-sub-row">
+    <p class="hero-descriptor">
+      High-performance web development and technical SEO for businesses that demand results, not excuses.
+    </p>
+    <div class="hero-stat-group">
+      <div class="hero-stat">
+        <div class="number" data-target="140">0</div>
+        <div class="label">% More Google Visibility</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number" data-target="4">0</div>
+        <div class="label">Wk. Avg. Launch</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number" data-target="100">0</div>
+        <div class="label">% BC-Based</div>
+      </div>
     </div>
-
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.16 }
-      );
-
-      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-      const parallaxNodes = document.querySelectorAll('.parallax');
-      window.addEventListener('scroll', () => {
-        const y = window.scrollY;
-        parallaxNodes.forEach((node) => {
-          const speed = Number(node.dataset.speed || 0.05);
-          node.style.transform = `translateY(${y * speed}px)`;
-        });
+  </div>
+</section>
+ 
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <div class="section-label">Deep-Dive Service Hub</div>
+      <h2 class="section-title">WHAT WE<br>SHIP</h2>
+    </div>
+    <p class="services-header-right">
+      Three core disciplines. One unified team. Zero excuses.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-number">SERVICE — 01</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="service-name">HIGH-VELOCITY<br>WEB DEV</div>
+      <p class="service-desc">Sub-second experiences engineered with modern React + Tailwind architecture. Frictionless journeys. Clean code ownership. Built for your users and your team.</p>
+      <a href="#contact" class="service-link">Start a Build <span class="arrow">→</span></a>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-number">SERVICE — 02</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <div class="service-name">LOCAL<br>DOMINANCE SEO</div>
+      <p class="service-desc">Win the Kamloops Map Pack. Build authority for AI-search discovery. Your business found first by high-intent local customers — every single time they look.</p>
+      <a href="#contact" class="service-link">Claim Your Market <span class="arrow">→</span></a>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-number">SERVICE — 03</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div class="service-name">DIGITAL GROWTH<br>CONSULTING</div>
+      <p class="service-desc">CRO, scaling roadmaps, and technical strategy that turns opportunities into measurable revenue. No fluff. No vanity metrics. Just decisions that compound.</p>
+      <a href="#contact" class="service-link">Let's Strategize <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+ 
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal">
+    <div class="section-label">Execution Roadmap</div>
+    <h2 class="section-title">HOW WE<br>MOVE</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal reveal-delay-1">
+      <div class="step-number-wrap">
+        <div class="step-number">01</div>
+        <span class="step-tag">Stage One</span>
+      </div>
+      <div class="step-title">DISCOVERY</div>
+      <p class="step-desc">We map your goals, audience, competitive landscape, and technical gaps. Week one ends with a clear brief, not vague promises. You know exactly what's coming and when.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="step-number-wrap">
+        <div class="step-number">02</div>
+        <span class="step-tag">Stage Two</span>
+      </div>
+      <div class="step-title">RAPID EXECUTION</div>
+      <p class="step-desc">Design, build, and deploy in a focused 2–4 week sprint. Daily check-ins. Real deliverables. No endless revision cycles. The work ships when it should — on time.</p>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="step-number-wrap">
+        <div class="step-number">03</div>
+        <span class="step-tag">Stage Three</span>
+      </div>
+      <div class="step-title">OPTIMIZATION</div>
+      <p class="step-desc">We monitor, test, and iterate post-launch. Search rankings, conversion rates, and performance scores evolve with data. The relationship doesn't end at go-live.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- WHY -->
+<section id="why">
+  <div class="why-grid">
+    <div class="why-left reveal">
+      <div class="section-label">Why Growth Teams Choose Reflex</div>
+      <h2 class="section-title">BUILT FOR<br>ROI, NOT<br>AESTHETICS</h2>
+      <p class="why-left-text">
+        Pretty websites that don't convert are expensive decorations. Every decision we make — from architecture to copy — is traced back to a business outcome.
+      </p>
+    </div>
+    <div class="why-pillars reveal reveal-delay-1">
+      <div class="why-pillar">
+        <div class="pillar-icon">01</div>
+        <div>
+          <div class="pillar-title">Performance-First Builds</div>
+          <p class="pillar-desc">Every build is structured for Core Web Vitals, clean code ownership, and conversion-focused page speed. Fast sites rank better and convert more.</p>
+        </div>
+      </div>
+      <div class="why-pillar">
+        <div class="pillar-icon">02</div>
+        <div>
+          <div class="pillar-title">Search Visibility Systems</div>
+          <p class="pillar-desc">From technical audits to local ranking strategy, we align search traffic with commercial intent. AI-search ready, not just Google-ready.</p>
+        </div>
+      </div>
+      <div class="why-pillar">
+        <div class="pillar-icon">03</div>
+        <div>
+          <div class="pillar-title">Transparent Partnership</div>
+          <p class="pillar-desc">Clear roadmaps, concise reporting, and strategic support. No agency fog. Decisions stay fast and accountability stays high.</p>
+        </div>
+      </div>
+      <div class="why-pillar">
+        <div class="pillar-icon">04</div>
+        <div>
+          <div class="pillar-title">Kamloops-First Focus</div>
+          <p class="pillar-desc">Proudly rooted in Thompson-Nicola. We understand the local market — and we build search strategies that reflect it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- WORK -->
+<section id="work">
+  <div class="reveal">
+    <div class="section-label">Selected Works</div>
+    <h2 class="section-title">PROOF IN<br>PERFORMANCE</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card reveal">
+      <div class="work-card-bg">MB</div>
+      <div class="work-tag">Optical Retail · Kamloops, BC</div>
+      <div class="work-title">MB OPTICS</div>
+      <p class="work-desc">Full site design and build for a Kamloops optical retailer. Clean, conversion-focused layout with a local SEO foundation to drive foot traffic and online bookings.</p>
+      <div class="work-metric">
+        <span class="number">↑</span>
+        <span class="unit">Local search visibility</span>
+      </div>
+    </div>
+    <div class="work-card reveal reveal-delay-1">
+      <div class="work-card-bg">BS</div>
+      <div class="work-tag">Automotive · Kamloops, BC</div>
+      <div class="work-title">BATTLESTREET MOTORWERKS</div>
+      <p class="work-desc">High-performance web presence for a Kamloops automotive shop. Built to reflect the brand's edge and rank for high-intent local service searches.</p>
+      <div class="work-metric">
+        <span class="number">↑</span>
+        <span class="unit">Organic reach & brand authority</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-layout">
+    <div class="reveal">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">CLEAR<br>ANSWERS</h2>
+      <p class="faq-left-text">No agency speak. Just straight answers to the questions you're actually asking.</p>
+    </div>
+    <div class="faq-list reveal reveal-delay-1">
+      <div class="faq-item">
+        <div class="faq-question">
+          How fast can Reflex Digital launch a project?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          Most engagements begin with a discovery session in week one, followed by a rapid execution sprint over 2–4 weeks, then ongoing optimization. Simple builds can ship faster. Complex projects get a clear timeline upfront — no surprises.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you only work with Kamloops businesses?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          We're proudly based in Kamloops and serve Thompson-Nicola first, while also partnering with growing organizations across BC and Canada. Local roots, scalable reach.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Can one team handle dev + SEO together?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          Yes — and this is a strategic advantage. Our process combines technical web development with technical and local SEO so speed, visibility, and conversion are aligned from day one. No handoff delays. No misaligned priorities.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          What's included in a Discovery engagement?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          A Discovery engagement includes a full audit of your current digital presence, competitive analysis, keyword and intent mapping, technical performance review, and a strategic roadmap with clear priorities and timelines.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          Do you offer ongoing support after launch?
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">
+          Absolutely. We offer retainer partnerships for ongoing optimization, content strategy, and technical support. The relationship doesn't end at go-live.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <div class="section-label">Strategic Inquiry</div>
+      <h2 class="contact-headline">READY TO<br>START A<br><span class="accent">REAL</span><br>PROJECT?</h2>
+      <p class="contact-sub">Tell us where you are and where you want to be. We'll come back with a straight assessment and a clear path forward.</p>
+    </div>
+ 
+    <!-- SUCCESS STATE (hidden by default) -->
+    <div class="form-success reveal reveal-delay-1" id="formSuccess">
+      <div class="success-icon">✓</div>
+      <div class="success-title">MESSAGE RECEIVED</div>
+      <p class="success-desc">Thanks for reaching out. We'll review your project details and be in touch within one business day.</p>
+    </div>
+ 
+    <!-- FORM -->
+    <form class="contact-form reveal reveal-delay-1" id="contactForm" action="https://formspree.io/f/xwvwklad" method="POST">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-field">
+          <label for="website">Company / Website</label>
+          <input type="text" id="website" name="website" placeholder="yoursite.ca">
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="goal">Primary Goal</label>
+        <select id="goal" name="goal" required>
+          <option value="">Select your primary goal</option>
+          <option>Launch a New Site</option>
+          <option>Rank Higher Locally</option>
+          <option>Scale My Digital Strategy</option>
+          <option>Technical Audit / Consultation</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="message">Tell Us More</label>
+        <textarea id="message" name="message" placeholder="Brief context on your project, timeline, or challenge..."></textarea>
+      </div>
+      <button class="submit-btn" type="submit" id="submitBtn">
+        <span id="submitLabel">INITIALIZE PROJECT</span> <span class="arrow">→</span>
+      </button>
+      <p class="form-error" id="formError"></p>
+    </form>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">
+    <img src="https://reflexdigital.ca/Reflex_Logo_R.png" alt="Reflex Digital">
+    REFLEX DIGITAL
+  </a>
+  <span class="footer-copy">© 2026 Reflex Digital · All rights reserved</span>
+  <span class="footer-location">Kamloops, BC · Thompson-Nicola & Beyond</span>
+</footer>
+ 
+<script>
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+ 
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => obs.observe(el));
+ 
+  // Count-up animation
+  function countUp(el, target, duration = 1800) {
+    const start = performance.now();
+    function update(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target);
+      if (p < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+  const statEls = document.querySelectorAll('.hero-stat .number[data-target]');
+  const statObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const target = parseInt(e.target.dataset.target);
+        countUp(e.target, target);
+        statObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  statEls.forEach(el => statObs.observe(el));
+ 
+  // Formspree async submission
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitLabel = document.getElementById('submitLabel');
+  const formError = document.getElementById('formError');
+ 
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    submitLabel.textContent = 'SENDING...';
+    submitBtn.disabled = true;
+    formError.textContent = '';
+ 
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
       });
-    </script>
-  </body>
+ 
+      if (response.ok) {
+        contactForm.style.display = 'none';
+        formSuccess.classList.add('show');
+      } else {
+        const data = await response.json();
+        formError.textContent = data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please try again.';
+        submitLabel.textContent = 'INITIALIZE PROJECT';
+        submitBtn.disabled = false;
+      }
+    } catch {
+      formError.textContent = 'Network error. Please check your connection and try again.';
+      submitLabel.textContent = 'INITIALIZE PROJECT';
+      submitBtn.disabled = false;
+    }
+  });
+ 
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+</body>
 </html>
